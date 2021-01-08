@@ -3,11 +3,13 @@ import test from 'tape';
 import MapboxDraw from '../';
 import modes from '../src/modes/index';
 import styleWithSourcesFixture from './fixtures/style_with_sources.json';
+import * as Constants from '../src/constants';
 
 test('Options test', (t) => {
   t.test('no options', (t) => {
     const Draw = new MapboxDraw();
     const defaultOptions = {
+      sourceName: Constants.DEFAULT_SOURCE,
       defaultMode: 'simple_select',
       modes,
       touchEnabled: true,
@@ -35,6 +37,7 @@ test('Options test', (t) => {
   t.test('use custom clickBuffer', (t) => {
     const Draw = new MapboxDraw({ clickBuffer: 10 });
     const defaultOptions = {
+      sourceName: Constants.DEFAULT_SOURCE,
       defaultMode: 'simple_select',
       modes,
       keybindings: true,
@@ -62,6 +65,7 @@ test('Options test', (t) => {
   t.test('hide all controls', (t) => {
     const Draw = new MapboxDraw({displayControlsDefault: false});
     const defaultOptions = {
+      sourceName: Constants.DEFAULT_SOURCE,
       defaultMode: 'simple_select',
       modes,
       keybindings: true,
@@ -88,6 +92,7 @@ test('Options test', (t) => {
   t.test('hide controls but show point', (t) => {
     const Draw = new MapboxDraw({displayControlsDefault: false, controls: {point:true}});
     const defaultOptions = {
+      sourceName: Constants.DEFAULT_SOURCE,
       defaultMode: 'simple_select',
       modes,
       keybindings: true,
@@ -115,6 +120,7 @@ test('Options test', (t) => {
   t.test('hide only point control', (t) => {
     const Draw = new MapboxDraw({ controls: {point:false}});
     const defaultOptions = {
+      sourceName: Constants.DEFAULT_SOURCE,
       defaultMode: 'simple_select',
       modes,
       keybindings: true,
@@ -142,6 +148,7 @@ test('Options test', (t) => {
   t.test('disable touch interaction', (t) => {
     const Draw = new MapboxDraw({ touchEnabled: false });
     const defaultOptions = {
+      sourceName: Constants.DEFAULT_SOURCE,
       defaultMode: 'simple_select',
       modes,
       touchEnabled: false,

@@ -14,7 +14,7 @@ export const classes = {
   BOX_SELECT: 'mapbox-gl-draw_boxselect'
 };
 
-export const SOURCE = 'mapbox-gl-draw';
+export const DEFAULT_SOURCE = 'mapbox-gl-draw';
 
 export const cursors = {
   ADD: 'add',

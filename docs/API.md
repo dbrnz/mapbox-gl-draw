@@ -36,6 +36,7 @@ All of the following options are optional.
 - `modes`, Object: over ride the default modes with your own. `MapboxDraw.modes` can be used to see the default values. More information on custom modes [can be found here](https://github.com/mapbox/mapbox-gl-draw/blob/main/docs/MODES.md).
 - `defaultMode`, String (default: `'simple_select'`): the mode (from `modes`) that user will first land in.
 - `userProperties`, boolean (default: `false`): properties of a feature will also be available for styling and prefixed with `user_`, e.g., `['==', 'user_custom_label', 'Example']`
+- `sourceName`, string (default `mapbox-gl-draw`): Source name to use.
 
 ## Modes
 
@@ -525,7 +526,7 @@ Draw uses a map style that adheres to the [Mapbox GL Style Spec](https://www.map
 
 **source**
 
-The GL Style Spec requires each layer to have a source. However, **do not provide a `source`** when styling Draw. **Draw will provide a `source` for you automatically**. The `source` that Draw provides is named `mapbox-gl-draw`.
+The GL Style Spec requires each layer to have a source. By default, Draw will provide a `source` named `mapbox-gl-draw`. You can also specify a custom source name using the `sourceName` option. If you provide a custom source name, your layer names will be prefixed with it.
 
 **id**
 

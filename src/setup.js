@@ -82,7 +82,7 @@ export default function(ctx) {
     },
     addLayers() {
       // drawn features style
-      ctx.map.addSource(Constants.SOURCE, {
+      ctx.map.addSource(ctx.options.sourceName, {
         data: {
           type: Constants.geojsonTypes.FEATURE_COLLECTION,
           features: []
@@ -106,8 +106,8 @@ export default function(ctx) {
         }
       });
 
-      if (ctx.map.getSource(Constants.SOURCE)) {
-        ctx.map.removeSource(Constants.SOURCE);
+      if (ctx.map.getSource(ctx.options.sourceName)) {
+        ctx.map.removeSource(ctx.options.sourceName);
       }
     }
   };

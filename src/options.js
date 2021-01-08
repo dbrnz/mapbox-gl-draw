@@ -5,6 +5,7 @@ import styles from './lib/theme';
 import modes from './modes/index';
 
 const defaultOptions = {
+  sourceName: Constants.DEFAULT_SOURCE,
   defaultMode: Constants.modes.SIMPLE_SELECT,
   keybindings: true,
   touchEnabled: true,
@@ -36,12 +37,14 @@ const hideControls = {
   uncombine_features: false
 };
 
-function addSources(styles) {
+function addSources(styles, sourceName) {
   return styles.map((style) => {
     if (style.source) return style;
     return xtend(style, {
-      id: `${style.id}`,
-      source: Constants.SOURCE
+      id: sourceName === Constants.DEFAULT_SOURCE ?
+        `${style.id}` :
+        `${sourceName}/${style.id}`,
+      source: sourceName
     });
   });
 }
@@ -62,7 +65,7 @@ export default function(options = {}) {
   withDefaults = xtend(defaultOptions, withDefaults);
 
   // Layers with a shared source should be adjacent for performance reasons
-  withDefaults.styles = addSources(withDefaults.styles);
+  withDefaults.styles = addSources(withDefaults.styles, withDefaults.sourceName);
 
   return withDefaults;
 }
