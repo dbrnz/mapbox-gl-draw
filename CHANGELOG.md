@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.4.3
+
+* Fix for layer not found error in `featuresAt` function by @caldwellc in https://github.com/mapbox/mapbox-gl-draw/pull/1194
+* Trigger `featureChanged` on feature props change by @wyozi in https://github.com/mapbox/mapbox-gl-draw/pull/1196
+* Remove `preventDefault()` on `touchstart` and `touchmove` events by @Archetylator in https://github.com/mapbox/mapbox-gl-draw/pull/1195
+
+## 1.4.2
+
+* Fix key event handler checks for `mapboxgl-canvas` by @neodescis in https://github.com/mapbox/mapbox-gl-draw/pull/1165
+* Fix draw updates not firing consistently by @gynekolog in https://github.com/mapbox/mapbox-gl-draw/pull/1160
+* Fix boxZoom restoring after removal by @kibala145 in https://github.com/mapbox/mapbox-gl-draw/pull/1017
+
 ## 1.4.1
 
 * Revert use of passive event listeners instead of `preventDefault` in https://github.com/mapbox/mapbox-gl-draw/pull/1158
